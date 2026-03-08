@@ -51,7 +51,7 @@ export default async function AdminLayout({
                                     href="/admin/users"
                                     className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
                                 >
-                                    Users
+                                    Profiles
                                 </Link>
                                 <Link
                                     href="/admin/images"
@@ -71,12 +71,7 @@ export default async function AdminLayout({
               <span className="text-sm text-gray-600 dark:text-gray-400">
                 {profile.email}
               </span>
-                            <Link
-                                href="/"
-                                className="text-sm text-blue-500 hover:text-blue-600"
-                            >
-                                View Site
-                            </Link>
+
                         </div>
                     </div>
                 </div>
