@@ -60,10 +60,34 @@ export default async function AdminLayout({
                                     Images
                                 </Link>
                                 <Link
+                                    href="/admin/flavor"
+                                    className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                                >
+                                    Flavors
+                                </Link>
+                                <Link
                                     href="/admin/captions"
                                     className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
                                 >
                                     Captions
+                                </Link>
+                                <Link
+                                    href="/admin/terms"
+                                    className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                                >
+                                    Terms
+                                </Link>
+                                <Link
+                                    href="/admin/llm"
+                                    className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                                >
+                                    LLM
+                                </Link>
+                                <Link
+                                    href="/admin/access-controls"
+                                    className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                                >
+                                    Access Controls
                                 </Link>
                             </nav>
                         </div>

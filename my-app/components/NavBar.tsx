@@ -1,10 +1,11 @@
 import { createClient } from '@/utils/supabase/server'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
-// import SignOutButton from "@/app/me/signoutbutton"; // Import the SignOutButton
+// import SignOutButton from "@/app/me/signOutButton"; // Import the SignOutButton
 import { Profile } from '@/types'
 
 export default async function Navbar() {
+  console.log('Navbar component rendering...');
   const supabase = await createClient()
 
   const {
@@ -40,7 +41,7 @@ export default async function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
-            <Link href="/" className="flex-shrink-0 flex items-center">
+            <Link href="/" className="shrink-0 flex items-center">
               <span className="text-2xl font-bold text-gray-900 dark:text-white">
                 Humor Project
               </span>
@@ -54,12 +55,26 @@ export default async function Navbar() {
                 Dashboard
               </Link>
               {profile?.is_superadmin && (
-                <Link
-                  href="/admin"
-                  className="border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 hover:text-gray-700 dark:hover:text-gray-50 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                >
-                  Admin
-                </Link>
+                <>
+                  <Link
+                    href="/admin"
+                    className="border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 hover:text-gray-700 dark:hover:text-gray-50 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                  >
+                    Admin
+                  </Link>
+                  <Link
+                    href="/admin/captions"
+                    className="border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 hover:text-gray-700 dark:hover:text-gray-50 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                  >
+                    Captions
+                  </Link>
+                  <Link
+                    href="/admin/flavor"
+                    className="border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 hover:text-gray-700 dark:hover:text-gray-50 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                  >
+                    Flavor
+                  </Link>
+                </>
               )}
             </div>
           </div>

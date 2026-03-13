@@ -52,7 +52,15 @@ async function deleteImageAction(id: string) { // Renamed to avoid conflict and 
 
 
 export default async function ImageDetailPage({ params }: { params: { id: string } }) {
-    const resolvedParams = params;
+    const resolvedParams = await params;
+
+    // UUID validation regex (standard format)
+    const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+    if (!resolvedParams.id || !uuidRegex.test(resolvedParams.id)) {
+        console.error('Invalid image ID provided:', resolvedParams.id);
+        notFound();
+    }
 
     const supabase = await createClient();
     const { data: image, error } = await supabase
